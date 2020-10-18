@@ -1,7 +1,7 @@
 # Silent Ads
 
 It just mute the annoying ads in spotify, gaana and jiosaavn. 
-Similiar apps can be on play store but hey who trusts them when they read all your notifications so made new one for me...
+<br>Similiar apps can be on play store but hey who trusts them when they read all your notifications so made new one for me...
 
 ## Getting Started
 
