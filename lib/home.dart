@@ -31,14 +31,18 @@ class _homeState extends State<home> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     super.initState();
     audioManager = AudioManager.STREAM_MUSIC;
-    if (getCheckNotificationPermStatus() == "granted") {
-    } else {
-      NotificationPermissions.requestNotificationPermissions();
-    }
+    checkForNotifications();
     initAudioStreamType();
     initSharedPrefs();
     updateVolumes();
     initPlatformState();
+  }
+
+  checkForNotifications() async {
+    if (await getCheckNotificationPermStatus() == "granted") {
+    } else {
+      NotificationPermissions.requestNotificationPermissions();
+    }
   }
 
   @override
@@ -340,7 +344,6 @@ class _homeState extends State<home> with WidgetsBindingObserver {
                         setVol(d.toInt());
                         updateVolumes();
                       });
-                      
                     },
                   ),
                 ],
